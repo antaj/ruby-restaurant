@@ -1,0 +1,33 @@
+<div class="row" style="margin: 50px 0 50px 0">
+  <div class="col-sm-6">
+    <div class="btn-group" role="group" aria-label="Basic example">
+      <% ['All', 'Breakfast', 'Lunch', 'Dinner', 'Drinks'].each do |section| %>
+        <%= link_to section, foods_path(section: section), class: (section == @section ? 'btn btn-secondary active' : 'btn btn-secondary') %>
+      <% end %>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="pull-right">
+      Sort by: <%= select("sort", "option", [['Alphabetical', 1], ['Price low to high', 2], ['Price high to low', 3]]) %>
+    </div>
+  </div>
+</div>
+
+<% @foods.in_groups_of(3, false).each do |group| %>
+
+<div class="row">
+  <% group.each do |food| %>
+    <div class="col-sm-4">
+      <div class="card">
+        <img class="card-img-top" data-src="holder.js/100%x180/" src="<%= food.img_url %>" alt="Card image cap">
+        <div class="card-block">
+          <h4 class="card-title"><%= food.name %></h4>
+          <p class="card-text"><%= food.description %><br/>Price: <strong><%= number_to_currency(food.price) %></strong></p>
+          <a href="#" class="btn btn-primary">Order</a>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<% end %>
