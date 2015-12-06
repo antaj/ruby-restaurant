@@ -5,12 +5,27 @@ class FoodsController < ApplicationController
   # GET /foods.json
   def index
     @section = params[:section]
+    @orderby = params[:orderby]
 
     if @section.blank? || @section == 'All'
       @section = 'All'
       @foods = Food.all
     else
       @foods = Food.where(section: @section)
+    end
+
+    case @orderby
+      when '0'
+        @foods = @foods.order('name ASC')
+        @orderby = 'A - Z'
+      when '1'
+        @foods = @foods.order('price ASC')
+        @orderby = 'Price low to high'
+      when '2'
+        @foods = @foods.order('price DESC')
+        @orderby = 'Price high to low'
+      else
+        @orderby = 'Sort by'
     end
 
   end

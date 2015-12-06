@@ -8,7 +8,16 @@
   </div>
   <div class="col-sm-6">
     <div class="pull-right">
-      Sort by: <%= select("sort", "option", [['Alphabetical', 1], ['Price low to high', 2], ['Price high to low', 3]]) %>
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="sortByMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+          <%= @orderby %>
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+          <li><%= link_to 'A - Z', params.merge({orderby: 0}) %></li>
+          <li><%= link_to 'Price low to high', params.merge({orderby: 1}) %></li>
+          <li><%= link_to 'Price high to low', params.merge({orderby: 2}) %></li>
+        </ul>
+      </div>
     </div>
   </div>
 </div>
@@ -22,7 +31,8 @@
         <img class="card-img-top" data-src="holder.js/100%x180/" src="<%= food.img_url %>" alt="Card image cap">
         <div class="card-block">
           <h4 class="card-title"><%= food.name %></h4>
-          <p class="card-text"><%= food.description %><br/>Price: <strong><%= number_to_currency(food.price) %></strong></p>
+          <p class="card-text">Price: <%= number_to_currency(food.price) %></p>
+          <%= link_to 'View', food_path(food), class: 'btn btn-primary' %>
           <a href="#" class="btn btn-primary">Order</a>
         </div>
       </div>

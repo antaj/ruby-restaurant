@@ -1,0 +1,25 @@
+<h3 style="margin: 50px 0 30px 0">Thank you for your order!</h3>
+
+<div class="row">
+  <div class="col-md-4">
+    <div class="panel panel-default">
+      <div class="panel-heading">Order Details</div>
+      <div class="panel-body">
+        Name: <%= @order.name %> <br/>
+        Phone: <%= @order.phone %> <br/>
+        Address: <%= @order.address %> <br/>
+        Food: <%= @order.food.name %><br/>
+        <br/>
+        <hr/>
+        Delivery fee: <strong>$10.00</strong><br/>
+        Total: <strong>$<%= @order.total %></strong>
+      </div>
+      <div class="panel-footer">
+        <%= link_to 'OK', foods_path, class: 'btn btn-primary' %>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-8">
+    <img class="card-img-top" width="600px" height="450px" src="http://loremflickr.com/600/450/food" />
+  </div>
+</div>

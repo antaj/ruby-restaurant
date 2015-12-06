@@ -1,29 +1,22 @@
-<p id="notice"><%= notice %></p>
+<h3 style="margin: 50px 0 30px 0"><%= @food.name %></h3>
 
-<p>
-  <strong>Name:</strong>
-  <%= @food.name %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @food.description %>
-</p>
-
-<p>
-  <strong>Price:</strong>
-  <%= @food.price %>
-</p>
-
-<p>
-  <strong>Section:</strong>
-  <%= @food.section %>
-</p>
-
-<p>
-  <strong>Img url:</strong>
-  <%= @food.img_url %>
-</p>
-
-<%= link_to 'Edit', edit_food_path(@food) %> |
-<%= link_to 'Back', foods_path %>
+<div class="row">
+  <div class="col-md-4">
+    <div class="panel panel-default">
+      <div class="panel-heading">Details</div>
+      <div class="panel-body">
+        Name: <%= @food.name %> <br/>
+        Description: <%= @food.description %> <br/>
+        Price: <%= @food.price %> <br/>
+        Type: <%= @food.section %>
+      </div>
+      <div class="panel-footer">
+        <%= link_to 'Add to cart', new_order_path(fid: @food.id, fname: @food.name, fprice: @food.price), class: 'btn btn-primary' %>
+        <%= link_to 'Back', foods_path, class: 'btn btn-primary' %>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-8">
+    <img class="card-img-top" width="600px" height="450px" src="<%= @food.img_url %>" />
+  </div>
+</div>
