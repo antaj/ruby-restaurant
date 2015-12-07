@@ -1,28 +1,48 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Week 1 Assignment - *Ruby Restaurant*
 
-Things you may want to cover:
+**Ruby Restaurant** is a Ruby on Rails application.
 
-* Ruby version
+Submitted by: **An Ta**
 
-* System dependencies
+Time spent: **10** hours spent in total
 
-* Configuration
+URL: **https://sheltered-fortress-7134.herokuapp.com/foods**
 
-* Database creation
+## User Stories
 
-* Database initialization
+The following **required** functionality is complete:
 
-* How to run the test suite
+* The User must be able to go two pages: Menu, and Contact Us.
+* The User can see the address and phone number on the contact us page.
+* The User can see a basic google map on the Contact Us page.
+* The User can navigate to a menu page with four sections: Breakfast, Lunch, Dinner, Drinks
+* The user should see at least 5 food items in each section.
+* Each food item should have the following fields: Name, Description, Price, Section, Image URL
 
-* Services (job queues, cache servers, search engines, etc.)
+## Video Walkthrough 
 
-* Deployment instructions
+Here's a walkthrough of implemented user stories:
 
-* ...
+![Video Walkthrough](http://i.imgur.com/link/to/your/gif/file.gif)
 
+## Notes
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+I finished the app and realized that I forgot to add "-d postgresql" when I generated the app, so the app used sqllite and could not be deployed to Heroku. I need to manually change the Gemfile and database.yaml file to make it work, so it's done later than expected.
+
+## License
+
+    Copyright [2015] [An Ta]
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
