@@ -25,7 +25,7 @@ The following **required** functionality is complete:
 
 Here's a walkthrough of implemented user stories:
 
-![Video Walkthrough](http://i.imgur.com/link/to/your/gif/file.gif)
+https://drive.google.com/open?id=0BwwwHC2oIXDMM2V1Wl9ibmpMZ3M
 
 ## Notes
 
