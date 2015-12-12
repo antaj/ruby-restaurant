@@ -8,7 +8,7 @@ Submitted by: **An Ta**
 
 Time spent: **10** hours spent in total
 
-URL: **https://sheltered-fortress-7134.herokuapp.com/foods**
+URL: **http://sheltered-fortress-7134.herokuapp.com/foods**
 
 ## User Stories
 
